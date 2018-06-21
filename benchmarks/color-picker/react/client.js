@@ -7,8 +7,9 @@ var mountNode = document.getElementById("mount");
 
 if (window.colors) {
     ReactDOM.render(
-        <App colors={window.colors}/>,
-        mountNode);
+        React.createElement(App, { colors: window.colors }),
+        mountNode
+      );
 
     console.log('Re-rendering on client completed');
 }
@@ -21,9 +22,10 @@ window.addBench('react', function(el, colors) {
     }
 
     ReactDOM.render(
-        <App colors={colors} onMount={onMount}/>,
+        React.createElement(
+          App,
+          { colors, onMount },
         el);
-
 
     var selectedColorIndex = 0;
 

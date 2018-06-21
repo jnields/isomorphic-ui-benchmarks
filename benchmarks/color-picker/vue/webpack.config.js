@@ -2,7 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
-  entry: path.resolve(__dirname, 'components/App.vue'),
+  entry: path.resolve(__dirname, 'components/App.jsx'),
   target: 'node',
   output: {
     filename: 'App.server.js',

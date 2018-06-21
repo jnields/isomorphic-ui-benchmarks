@@ -1,7 +1,4 @@
 {
-    "presets": [
-        ["es2015", { "loose": true, "modules": false }],
-        "stage-0"
-    ],
-    "plugins": ["transform-vue-jsx"]
+  "presets": [["env", { "modules": false }]],
+  "plugins": ["transform-vue-jsx", "external-helpers"]
 }

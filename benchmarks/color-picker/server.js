@@ -1,11 +1,14 @@
-'use strict';
-require('marko/node-require');
+import colors from './colors.json';
+import inferno from './inferno/server';
+import marko from './marko/server';
+import preact from './preact/server';
+import react from './react/server';
+import vue from './vue/server';
 
-var colors = require('./colors.json');
-module.exports = function(bench) {
-    var serverFactory = bench.serverFactory;
-    var fn = serverFactory(colors);
-    return {
-        fn
-    };
+export default {
+  inferno: inferno(colors),
+  marko: marko(colors),
+  preact: preact(colors),
+  react: react(colors),
+  vue: vue(colors),
 };

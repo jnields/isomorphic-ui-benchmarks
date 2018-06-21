@@ -1,11 +1,3 @@
-var app = require('./components/app');
+import app from './app.marko.js'
 
-module.exports = function(colors) {
-    return function benchFn() {
-        var html = app.renderToString({
-            colors: colors
-        });
-
-        return html;
-    };
-};
+export default (colors) => () => app.renderToString({ colors });
